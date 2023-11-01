@@ -42,6 +42,7 @@ function updateGameArea() {
 }
 
 // Start the game
+document.querySelector('.game-over-screen').style.display = 'none';
 document.getElementById('start-button').addEventListener('click', startGame);
 
 // Restart the game
@@ -50,6 +51,7 @@ document
   .addEventListener('click', restartGame);
 
 function startGame() {
+  console.log('Game Started');
   isGameRunning = true;
   document.querySelector('.start-screen').style.display = 'none';
   document.querySelector('.game-over-screen').style.display = 'none';
@@ -70,6 +72,7 @@ function restartGame() {
   isGameRunning = true;
   document.querySelector('.start-screen').style.display = 'none';
   document.querySelector('.game-over-screen').style.display = 'none';
+
   ballReset();
   gameInterval = setInterval(updateGameArea, 1000 / 60);
 }
@@ -124,7 +127,20 @@ function ballReset() {
   ballX = 300;
   ballY = 200;
   ballSpeedX = ballSpeed;
-  ballDirection = -1;
+  ballDirection = generateRandomDirection();
+}
+
+//Generates random direction for the ball to start
+function generateRandomDirection() {
+  const directionsArr = [-1, 1];
+
+  // get random index value
+  const randomDirectionIndex = Math.floor(Math.random() * directionsArr.length);
+
+  // get random item
+  const randomDirection = directionsArr[randomDirectionIndex];
+
+  return randomDirection;
 }
 
 // Draw game elements

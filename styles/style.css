@@ -34,6 +34,15 @@ body {
   z-index: 1;
 }
 
+#game-over-title {
+  color: #ffffff;
+}
+
+#winner {
+  color: #ffffff;
+  animation: both;
+}
+
 button {
   font-size: 24px;
   padding: 10px 20px;
