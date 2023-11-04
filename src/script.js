@@ -9,16 +9,16 @@ document
   .getElementById('restart-button')
   .addEventListener('click', () => game.restartGame());
 document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowUp' && game.rightPaddleY > 0) {
+  if (e.key === 'ArrowUp' && game.rightPaddleY > 10) {
     game.rightPaddleY -= game.paddle.speed;
   }
-  if (e.key === 'ArrowDown' && game.rightPaddleY < 320) {
+  if (e.key === 'ArrowDown' && game.rightPaddleY < 310) {
     game.rightPaddleY += game.paddle.speed;
   }
-  if (e.key === 'w' && game.leftPaddleY > 0) {
+  if (e.key === 'w' && game.leftPaddleY > 10) {
     game.leftPaddleY -= game.paddle.speed;
   }
-  if (e.key === 's' && game.leftPaddleY < 320) {
+  if (e.key === 's' && game.leftPaddleY < 310) {
     game.leftPaddleY += game.paddle.speed;
   }
 });

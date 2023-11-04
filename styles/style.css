@@ -12,6 +12,11 @@ body {
   color: #3498db;
   padding: 0px;
   border: none;
+  margin-bottom: 0px;
+}
+
+#game-name {
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
 .game-container {
@@ -89,4 +94,15 @@ button {
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+/* glowing text effect used in title */
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px #3498db;
+  }
+  to {
+    text-shadow: 0 0 30px #4ea1d9, 0 0 10px #83b5d6;
+  }
 }
