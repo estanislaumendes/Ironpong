@@ -6,6 +6,13 @@ body {
   margin: 0;
   background-color: #000;
   flex-direction: column;
+  background-image: url('../images/background.jfif');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-blend-mode: lighten;
+  opacity: 0.95;
+  background-position: 9em;
+  background-position-x: center;
 }
 .game-header {
   font-size: 24px;
@@ -17,6 +24,7 @@ body {
 
 #game-name {
   animation: glow 2s ease-in-out infinite alternate;
+  font-family: Georgia;
 }
 
 .game-container {
