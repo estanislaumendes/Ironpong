@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="shortcut icon" href="./styles/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="./styles/style.css" />
+    <title>IRON PONG</title>
   </head>
   <body>
     <header class="game-header">
@@ -11,13 +13,16 @@
     </header>
     <div class="game-container">
       <div class="start-screen">
-        <button id="start-button">Start Game</button>
+        <button id="one-player-start-button">One Player</button>
+        <button id="start-button">Two Players</button>
       </div>
+
       <div class="game-over-screen">
         <h1 id="game-over-title">Game Over</h1>
         <p id="winner"></p>
         <button id="restart-button">Restart</button>
       </div>
+
       <div class="game">
         <div class="paddle" id="leftPaddle"></div>
         <div class="paddle" id="rightPaddle"></div>
