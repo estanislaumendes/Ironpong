@@ -5,13 +5,13 @@ class Paddle {
   }
 
   moveUp() {
-    if (this.y > 0) {
+    if (this.y > 10) {
       this.y -= this.speed;
     }
   }
 
   moveDown() {
-    if (this.y < 320) {
+    if (this.y < 310) {
       this.y += this.speed;
     }
   }

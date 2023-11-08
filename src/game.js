@@ -1,5 +1,6 @@
 class Game {
-  constructor() {
+  constructor(gameMode) {
+    this.gameMode = gameMode;
     this.gameInterval = null;
     this.level = 1;
     this.player1Score = 0;
@@ -35,12 +36,21 @@ class Game {
     this.drawGameArea();
   }
 
-  startGame() {
+  startGame(gameMode) {
     console.log('Game Started');
     this.isGameRunning = true;
     document.querySelector('.start-screen').style.display = 'none';
     document.querySelector('.game-over-screen').style.display = 'none';
-    this.gameInterval = setInterval(() => this.updateGameArea(), 1000 / 60);
+    if (gameMode === 1) {
+      // In one-player mode, automate the right paddle's movement
+      this.gameInterval = setInterval(() => {
+        this.updateGameArea();
+        this.moveRightPaddleAutomatically();
+      }, 1000 / 60);
+    } else {
+      // In two-player mode, let players control both paddles
+      this.gameInterval = setInterval(() => this.updateGameArea(), 1000 / 60);
+    }
   }
 
   endGame(winnerText) {
@@ -54,12 +64,12 @@ class Game {
     this.level = 1;
     this.player1Score = 0;
     this.player2Score = 0;
-    this.isGameRunning = true;
-    document.querySelector('.start-screen').style.display = 'none';
+    this.isGameRunning = false;
+    document.querySelector('.start-screen').style.display = 'flex';
     document.querySelector('.game-over-screen').style.display = 'none';
 
     this.ball.reset();
-    this.gameInterval = setInterval(() => this.updateGameArea(), 1000 / 60);
+    //this.gameInterval = setInterval(() => this.updateGameArea(), 1000 / 60);
   }
 
   movePaddles() {
@@ -70,6 +80,26 @@ class Game {
     rightPaddle.style.top = this.rightPaddleY + 'px';
 
     console.log('Paddles Moving');
+  }
+
+  moveRightPaddleAutomatically() {
+    // Right paddle follows the ball when the ball is on the right side
+    if (this.ball.x > 300) {
+      // Introduce a 20% miss chance
+      if (Math.random() < 0.2) {
+        // Do nothing (computer misses)
+      } else {
+        // Move the paddle based on the ball's position
+        if (this.ball.y > this.rightPaddleY + 40) {
+          this.rightPaddleY += this.paddle.speed;
+        } else if (this.ball.y < this.rightPaddleY) {
+          this.rightPaddleY -= this.paddle.speed;
+        }
+      }
+    } else {
+      // Reset right paddle's position when the ball is on the left side
+      this.rightPaddleY = 160;
+    }
   }
 
   drawGameArea() {
