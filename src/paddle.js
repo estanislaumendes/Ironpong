@@ -2,6 +2,8 @@ class Paddle {
   constructor(initialY) {
     this.y = initialY;
     this.speed = 30;
+    this.width = 10;
+    this.height = 80;
   }
 
   moveUp() {

@@ -10,6 +10,8 @@ class Game {
     this.rightPaddleY = 160;
     this.ball = new Ball();
     this.paddle = new Paddle(160);
+    this.gameWidth = 900; // Updated game width
+    this.gameHeight = 400; // Fixed game height
   }
 
   updateGameArea() {
@@ -22,7 +24,7 @@ class Game {
       this.player2Score++;
       this.ball.reset();
     }
-    if (this.ball.x > 600) {
+    if (this.ball.x > 900) {
       this.player1Score++;
       this.ball.reset();
     }
@@ -84,7 +86,7 @@ class Game {
 
   moveRightPaddleAutomatically() {
     // Right paddle follows the ball when the ball is on the right side
-    if (this.ball.x > 300) {
+    if (this.ball.x > 450) {
       // Introduce a 20% miss chance
       if (Math.random() < 0.2) {
         // Do nothing (computer misses)

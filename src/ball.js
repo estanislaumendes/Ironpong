@@ -1,10 +1,11 @@
 class Ball {
   constructor() {
-    this.x = 300;
+    this.x = 450;
     this.y = 200;
-    this.speedX = 5;
-    this.speedY = 5;
+    this.speedX = 5; // Set a fixed speed for the X-axis
+    this.speedY = 5; // Set a fixed speed for the Y-axis
     this.direction = -1; // Left (-1) or Right (1)
+    this.radius = 5;
   }
 
   move() {
@@ -14,6 +15,7 @@ class Ball {
     if (this.y <= 0 || this.y >= 400) {
       this.speedY = -this.speedY;
     }
+
     console.log('Ball Moving');
 
     this.checkPaddleCollision();
@@ -24,18 +26,18 @@ class Ball {
       (this.x <= 10 &&
         this.y >= game.leftPaddleY &&
         this.y <= game.leftPaddleY + 80) ||
-      (this.x >= 580 &&
+      (this.x >= 880 &&
         this.y >= game.rightPaddleY &&
         this.y <= game.rightPaddleY + 80)
     ) {
-      this.speedX += 1;
+      this.speedX += 0.5;
       this.direction = -this.direction;
       console.log('Ball Touched Paddle');
     }
   }
 
   reset() {
-    this.x = 300;
+    this.x = 450;
     this.y = 200;
     this.speedX = 5;
     this.direction = this.generateRandomDirection();
