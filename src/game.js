@@ -90,9 +90,9 @@ class Game {
         // Do nothing (computer misses)
       } else {
         // Move the paddle based on the ball's position
-        if (this.ball.y > this.rightPaddleY + 40) {
+        if (this.ball.y > this.rightPaddleY + 40 && this.rightPaddleY < 310) {
           this.rightPaddleY += this.paddle.speed;
-        } else if (this.ball.y < this.rightPaddleY) {
+        } else if (this.ball.y < this.rightPaddleY && this.rightPaddleY > 10) {
           this.rightPaddleY -= this.paddle.speed;
         }
       }
