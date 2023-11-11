@@ -13,6 +13,7 @@ body {
   opacity: 0.95;
   background-position: 9em;
   background-position-x: center;
+  background-size: 170%;
 }
 .game-header {
   font-size: 24px;
@@ -31,6 +32,7 @@ body {
   text-align: center;
   position: relative;
   box-shadow: 0 0 40px #3498db;
+  opacity: 90%;
 }
 
 .start-screen,
