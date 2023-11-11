@@ -87,8 +87,8 @@ class Game {
   moveRightPaddleAutomatically() {
     // Right paddle follows the ball when the ball is on the right side
     if (this.ball.x > 450) {
-      // Introduce a 20% miss chance
-      if (Math.random() < 0.2) {
+      // Introduce a 70% miss chance
+      if (Math.random() < 0.7) {
         // Do nothing (computer misses)
       } else {
         // Move the paddle based on the ball's position
