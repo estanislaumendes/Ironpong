@@ -15,6 +15,20 @@ body {
   background-position-x: center;
   background-size: 170%;
 }
+.players-input {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  color: #ffffff;
+  justify-content: space-around;
+  font-size: 20px;
+}
+
+.playerone-span,
+.playertwo-span {
+  justify-content: space-between;
+}
+
 .game-header {
   font-size: 24px;
   color: #3498db;
@@ -52,6 +66,7 @@ body {
   flex-direction: column;
   justify-content: center;
   margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 .game-container {
@@ -81,9 +96,11 @@ body {
   color: #ffffff;
 }
 
-#winner {
+#winnerName {
   color: #ffffff;
   animation: both;
+  padding-bottom: 20px;
+  font-size: 20px;
 }
 
 button {

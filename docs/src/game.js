@@ -10,8 +10,8 @@ class Game {
     this.rightPaddleY = 160;
     this.ball = new Ball();
     this.paddle = new Paddle(160);
-    this.gameWidth = 900; // Updated game width
-    this.gameHeight = 400; // Fixed game height
+    this.gameWidth = 900;
+    this.gameHeight = 400;
   }
 
   updateGameArea() {
@@ -59,6 +59,14 @@ class Game {
     this.isGameRunning = false;
     clearInterval(this.gameInterval);
     document.querySelector('.game-over-screen').style.display = 'flex';
+
+    const winnerNameElement = document.getElementById('winnerName');
+    const winnerName =
+      this.player1Score >= 5
+        ? document.getElementById('playerOneInput').value
+        : document.getElementById('playerTwoInput').value;
+    winnerNameElement.textContent = `${winnerName} Wins!`;
+
     document.getElementById('winner').textContent = winnerText;
   }
 

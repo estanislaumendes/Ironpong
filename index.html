@@ -10,42 +10,53 @@
     <title>IRON PONG</title>
   </head>
   <body>
-    <header class="game-header">
-      <div>
-        <h1 id="game-name">IRON PONG</h1>
-        <h2 class="instructions">Instructions:</h2>
-        <p class="instructions-p">
-          Player One: Press W(move paddle up) and press S(move paddle down)
-          <br />
-          Player Two: Press arrow up(move paddle up) and arrow down(move paddle
-          down)
-        </p>
-      </div>
-    </header>
-    <div class="game-container">
-      <div class="start-screen">
-        <button id="one-player-start-button">One Player</button>
-        <button id="start-button">Two Players</button>
-      </div>
-
-      <div class="game-over-screen">
-        <h1 id="game-over-title">Game Over</h1>
-        <p id="winner"></p>
-        <button id="restart-button">Restart</button>
+    <main>
+      <header class="game-header">
+        <div>
+          <h1 id="game-name">IRON PONG</h1>
+          <h2 class="instructions">Instructions:</h2>
+          <p class="instructions-p">
+            Player One: Press W(move paddle up) and press S(move paddle down)
+            <br />
+            Player Two: Press arrow up(move paddle up) and arrow down(move
+            paddle down)
+          </p>
+        </div>
+      </header>
+      <div class="players-input">
+        <span class="playerone-span" id="playerOneSection"
+          >Player One: <input type="text" id="playerOneInput"
+        /></span>
+        <span class="playertwo-span" id="playerTwoSection">
+          Player Two: <input type="text" id="playerTwoInput" />
+        </span>
       </div>
 
-      <div class="game">
-        <div class="paddle" id="leftPaddle"></div>
-        <div class="paddle" id="rightPaddle"></div>
-        <div class="ball" id="ball"></div>
-        <div class="score">
-          <span id="player1Score">0</span> - <span id="player2Score">0</span>
+      <div class="game-container">
+        <div class="start-screen">
+          <button id="one-player-start-button">One Player</button>
+          <button id="start-button">Two Players</button>
+        </div>
+
+        <div class="game-over-screen">
+          <h1 id="game-over-title">Game Over</h1>
+          <p id="winnerName"></p>
+          <button id="restart-button">Restart</button>
+        </div>
+
+        <div class="game">
+          <div class="paddle" id="leftPaddle"></div>
+          <div class="paddle" id="rightPaddle"></div>
+          <div class="ball" id="ball"></div>
+          <div class="score">
+            <span id="player1Score">0</span> - <span id="player2Score">0</span>
+          </div>
         </div>
       </div>
-    </div>
-    <script src="./docs/src/paddle.js"></script>
-    <script src="./docs/src/ball.js"></script>
-    <script src="./docs/src/game.js"></script>
-    <script src="./docs/src/script.js"></script>
+      <script src="./docs/src/paddle.js"></script>
+      <script src="./docs/src/ball.js"></script>
+      <script src="./docs/src/game.js"></script>
+      <script src="./docs/src/script.js"></script>
+    </main>
   </body>
 </html>
