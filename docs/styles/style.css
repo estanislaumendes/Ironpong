@@ -49,6 +49,10 @@ body {
   font-size: 30px;
   margin-bottom: 5px;
 }
+.keys {
+  width: 20px;
+  padding-bottom: 0px;
+}
 .instructions-p {
   color: aliceblue;
   align-items: center;
