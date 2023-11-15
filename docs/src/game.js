@@ -24,7 +24,7 @@ class Game {
       this.player2Score++;
       this.ball.reset();
     }
-    if (this.ball.x > 900) {
+    if (this.ball.x > 880) {
       this.player1Score++;
       this.ball.reset();
     }
@@ -32,7 +32,7 @@ class Game {
     if (this.player1Score >= 5) {
       this.endGame('Player 1 Wins!');
     } else if (this.player2Score >= 5) {
-      this.endGame('Player 2 Wins!');
+      this.endGame('Computer Wins!');
     }
 
     this.drawGameArea();
@@ -60,14 +60,25 @@ class Game {
     clearInterval(this.gameInterval);
     document.querySelector('.game-over-screen').style.display = 'flex';
 
-    const winnerNameElement = document.getElementById('winnerName');
-    const winnerName =
-      this.player1Score >= 5
-        ? document.getElementById('playerOneInput').value
-        : document.getElementById('playerTwoInput').value;
-    winnerNameElement.textContent = `${winnerName} Wins!`;
+    if (this.gameMode === 2) {
+      const winnerNameElement = document.getElementById('winnerName');
+      const winnerName =
+        this.player1Score >= 5
+          ? document.getElementById('playerOneInput').value
+          : document.getElementById('playerTwoInput').value;
+      winnerNameElement.textContent = `${winnerName} Wins!`;
 
-    document.getElementById('winner').textContent = winnerText;
+      document.getElementById('winner').textContent = winnerText;
+    } else {
+      const winnerNameElement = document.getElementById('winnerName');
+      const winnerName =
+        this.player1Score >= 5
+          ? document.getElementById('playerOneInput').value
+          : document.getElementById('playerTwoInput').value;
+      winnerNameElement.textContent = `${winnerName} Wins!`;
+
+      document.getElementById('winner').textContent = winnerText;
+    }
   }
 
   restartGame() {

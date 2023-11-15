@@ -12,7 +12,7 @@ class Ball {
     this.x += this.speedX * this.direction;
     this.y += this.speedY;
 
-    if (this.y <= 0 || this.y >= 400) {
+    if (this.y <= 0 || this.y >= 380) {
       this.speedY = -this.speedY;
     }
 
@@ -26,7 +26,7 @@ class Ball {
       (this.x <= 10 &&
         this.y >= game.leftPaddleY &&
         this.y <= game.leftPaddleY + 80) ||
-      (this.x >= 880 &&
+      (this.x >= 875 &&
         this.y >= game.rightPaddleY &&
         this.y <= game.rightPaddleY + 80)
     ) {
